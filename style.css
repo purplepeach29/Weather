@@ -49,4 +49,23 @@ body {
   h6 {
       overflow-wrap: break-word;
   }
-    
+/*
+    8. Create a root stacking context
+  */
+  #root,
+  #__next {
+      isolation: isolate;
+  }
+  
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+  
+  /* MAIN STYLE */
+  
+  body {
+      background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperboat.com%2Fwp-content%2Fuploads%2F2019%2F05%2Fhappy-winter-20.jpg&f=1&nofb=1&ipt=69b7121116a4976aed2a8aa882eb48979ea7faa1853536daa7768acc14ac175d&ipo=images");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      font-family: "Poppins", sans-serif;
+  }
+      
