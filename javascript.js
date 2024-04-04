@@ -22,6 +22,51 @@ const weatherIconDay3 = document.querySelector('.weather-icon-day3');
 const dayElements = document.querySelectorAll('.day');
 const API_KEY = '7526f720c6a5461c8ef101027242103';
 
+function isGoingToRain(forecastday) {
+  if (forecastday[0].day.totalprecip_mm > 0) {
+    rainElement.textContent = 'Be ready for rain';
+  } else {
+    rainElement.textContent = 'No rain!';
+  }
+}
+
+function displayForecast(forecastday) {
+  console.log(forecastday);
+  dayElements.forEach((day, index) => {
+    if (index === 0) {
+      let day = forecastday[index].date;
+      day = day.split('-');
+      day = `${day[2]}/${day[1]}`;
+      dayElements[index].textContent = day;
+
+      weatherDay1.textContent = forecastday[index].day.condition.text;
+      temperatureDay1.textContent = `${forecastday[index].day.maxtemp_c}°C`;
+      weatherIconDay1.src = `http:${forecastday[index].day.condition.icon}`;
+      weatherIconDay1.alt = forecastday[index].day.condition.text;
+    } else if (index === 1) {
+      let day = forecastday[index].date;
+      day = day.split('-');
+      day = `${day[2]}/${day[1]}`;
+      dayElements[index].textContent = day;
+
+      weatherDay2.textContent = forecastday[index].day.condition.text;
+      temperatureDay2.textContent = `${forecastday[index].day.maxtemp_c}°C`;
+      weatherIconDay2.src = `http:${forecastday[index].day.condition.icon}`;
+      weatherIconDay2.alt = forecastday[index].day.condition.text;
+    } else if (index === 2) {
+      let day = forecastday[index].date;
+      day = day.split('-');
+      day = `${day[2]}/${day[1]}`;
+      dayElements[index].textContent = day;
+
+      weatherDay3.textContent = forecastday[index].day.condition.text;
+      temperatureDay3.textContent = `${forecastday[index].day.maxtemp_c}°C`;
+      weatherIconDay3.src = `http:${forecastday[index].day.condition.icon}`;
+      weatherIconDay3.alt = forecastday[index].day.condition.text;
+    }
+  });
+}
+
 function displayWeather(data) {
   const { name } = data.location;
   const { icon, text: description } = data.current.condition;
@@ -70,3 +115,5 @@ searchBtn.addEventListener('click', () => {
     searchBar.blur();
   }
 });
+
+searchCity();
