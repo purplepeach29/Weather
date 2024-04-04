@@ -22,6 +22,21 @@ const weatherIconDay3 = document.querySelector('.weather-icon-day3');
 const dayElements = document.querySelectorAll('.day');
 const API_KEY = '7526f720c6a5461c8ef101027242103';
 
+function displayWeather(data) {
+  const { name } = data.location;
+  const { icon, text: description } = data.current.condition;
+  const { temp_c, temp_f } = data.current;
+  const { forecastday } = data.forecast;
+
+  displayForecast(data.forecast.forecastday);
+  isGoingToRain(forecastday);
+  locationElement.textContent = name;
+  weatherElement.textContent = description;
+  weatherIcon.src = `http:${icon}`;
+  weatherIcon.alt = description;
+  temperatureElement.textContent = `${temp_c}°C`;
+}
+
 async function searchCity(city = 'Delhi') {
   try {
     const response = await fetch(
