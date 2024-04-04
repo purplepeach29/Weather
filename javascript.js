@@ -21,3 +21,18 @@ const weatherIconDay3 = document.querySelector('.weather-icon-day3');
 
 const dayElements = document.querySelectorAll('.day');
 const API_KEY = '7526f720c6a5461c8ef101027242103';
+
+async function searchCity(city = 'Delhi') {
+  try {
+    const response = await fetch(
+      `
+          https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=3&lang=en
+          `,
+    );
+    const data = await response.json();
+
+    displayWeather(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
