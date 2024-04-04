@@ -36,3 +36,22 @@ async function searchCity(city = 'Delhi') {
     console.error(error);
   }
 }
+
+searchBar.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    searchCity(e.target.value);
+  }
+});
+
+searchBtn.addEventListener('click', () => {
+  if (searchBar.value) {
+    searchCity(searchBar.value);
+  }
+
+  searchBar.classList.toggle('active');
+  if (searchBar.classList.contains('active')) {
+    searchBar.focus();
+  } else {
+    searchBar.blur();
+  }
+});
