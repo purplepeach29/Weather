@@ -20,3 +20,4 @@ const weatherIconDay2 = document.querySelector('.weather-icon-day2');
 const weatherIconDay3 = document.querySelector('.weather-icon-day3');
 
 const dayElements = document.querySelectorAll('.day');
+const API_KEY = '7526f720c6a5461c8ef101027242103';
