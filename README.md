@@ -4,8 +4,9 @@ Built With
 HTML5
 CSS3
 JavaScript
-Live Demo
-Live Demo Link
+
+Live Demo -
+https://purplepeach29/github.io/Weather
 
 What I learned
 How to use the fetch API to make requests to a third-party API.
