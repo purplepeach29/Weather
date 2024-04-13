@@ -6,7 +6,7 @@ CSS3
 JavaScript
 
 Live Demo -
-https://purplepeach29/github.io/Weather
+https://purplepeach29.github.io/Weather
 
 What I learned
 How to use the fetch API to make requests to a third-party API.
